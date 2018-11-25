@@ -12,4 +12,5 @@
     <string name="verified">Verified</string>
     <string name="vegan">Vegan</string>
     <string name="not_vegan">Not Vegan</string>
+    <string name="disclaimer">Disclaimer: Payment will be secured with Homecooked until meal has been attended at which point the payment will be transfered to the chef.</string>
 </resources>

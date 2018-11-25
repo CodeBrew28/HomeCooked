@@ -3,6 +3,7 @@
 package com.example.ariamalkani.homecooked;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -64,17 +65,16 @@ public class BrowseFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(mAdapter);
-
         return view;
     }
 
     private void addMeals() {
         Meal m1 = new Meal("Shady Bob's BBQ", true, false,
-                "3.1/5", "Avg. $7", R.drawable.bbq);
+                "3.1/5", "Avg. $7", R.drawable.bbq, "201 N Goodwin Ave");
         Meal m2 = new Meal("John's Vegan Heaven", true, true,
-                "4.7/5", "Avg. $20", R.drawable.vegan_steak);
+                "4.7/5", "Avg. $20", R.drawable.vegan_steak, "603 E Daniel");
         Meal m3 = new Meal("Burger Prince", false, false,
-                "4.7/5", "Avg. $10", R.drawable.burger);
+                "4.7/5", "Avg. $10", R.drawable.burger, "1401 W Green St");
 
         mealList.add(m1);
         mealList.add(m2);
@@ -88,10 +88,11 @@ public class BrowseFragment extends Fragment {
         public class MyViewHolder extends RecyclerView.ViewHolder {
             public TextView chefName, avgPrice, rating, vegan, verified;
             public ImageView thumbnail;
+            public View heldView;
 
             public MyViewHolder(View view) {
                 super(view);
-
+                heldView = view;
                 chefName = view.findViewById(R.id.chef_name);
                 avgPrice = view.findViewById(R.id.avg_price);
                 rating = view.findViewById(R.id.rating);
@@ -117,6 +118,21 @@ public class BrowseFragment extends Fragment {
         @Override
         public void onBindViewHolder(MyViewHolder holder, final int position) {
             final Meal meal = mealList.get(position);
+
+            holder.heldView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v){
+                    Intent intent = new Intent(v.getContext(), ScheduleActivity.class);
+                    intent.putExtra("CHEF_NAME", meal.getChefName());
+                    intent.putExtra("VERIFIED", String.valueOf(meal.getVerified()));
+                    intent.putExtra("VEGAN", meal.getVegan());
+                    intent.putExtra("RATING", meal.getRating());
+                    intent.putExtra("PRICE", meal.getAvgPrice());
+                    intent.putExtra("THUMBNAIL", Integer.toString(meal.getThumbnail()));
+                    intent.putExtra("LOCATION", meal.getLocation());
+                    startActivity(intent);
+                }
+            });
+
             holder.chefName.setText(meal.getChefName());
             if (meal.getVerified()) {
                 holder.verified.setText("Verified");

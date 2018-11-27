@@ -1,25 +1,27 @@
 package com.example.ariamalkani.homecooked;
 
-import java.util.List;
+import java.io.Serializable;
 
-public class Meal {
+public class Meal implements Serializable {
     private String chefName;
     private Boolean verified;
     private Boolean vegan;
     private String rating;
     private String avgPrice;
+    private String location;
     private int thumbnail;
 
     public Meal() { }
 
     public Meal(String chefName, Boolean verified, Boolean vegan,
-                String rating, String avgPrice, int thumbnail) {
+                String rating, String avgPrice, int thumbnail, String location) {
         this.chefName = chefName;
         this.verified = verified;
         this.vegan = vegan;
         this.rating = rating;
         this.avgPrice = avgPrice;
         this.thumbnail = thumbnail;
+        this.location = location;
     }
 
     //  Getters
@@ -47,6 +49,8 @@ public class Meal {
         return thumbnail;
     }
 
+    public String getLocation() {return location; }
+
     // Setters
 
     public void setChefName(String chefName) {
@@ -72,5 +76,7 @@ public class Meal {
     public void setThumbnail(int thumbnail) {
         this.thumbnail = thumbnail;
     }
+
+    public void setLocation (String location) { this.location = location; }
 }
 

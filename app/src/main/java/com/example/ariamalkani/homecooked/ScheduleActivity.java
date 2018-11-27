@@ -24,51 +24,55 @@ public class ScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-        populateData(getIntent());
-        setButton();
+        Intent intent = getIntent();
+        populateData(intent);
+        setButton(intent);
     }
 
     private void populateData(Intent intent) {
-        int thumbnailID = Integer.parseInt(intent.getStringExtra("THUMBNAIL"));
+        Meal meal = (Meal) intent.getSerializableExtra("SERIALIZED_MEAL");
+
         thumbnail = findViewById(R.id.thumbnail);
-        thumbnail.setImageResource(thumbnailID);
+        thumbnail.setImageResource(meal.getThumbnail());
 
         chefNameView = findViewById(R.id.chef_name);
-        String text = "Chef Name: " + intent.getStringExtra("CHEF_NAME");
+        String text = "Chef: " + meal.getChefName();
         chefNameView.setText(text);
 
         verifiedView = findViewById(R.id.verified_bool);
-        if (Boolean.parseBoolean(intent.getStringExtra("VERIFIED"))) {
+        if (meal.getVerified()) {
             verifiedView.setText(getString(R.string.verified));
         } else {
             verifiedView.setText(getString(R.string.unverifeid));
         }
 
         ratingView = findViewById(R.id.rating);
-        text = "Rating: " + intent.getStringExtra("RATING");
+        text = "Rating: " + meal.getRating();
         ratingView.setText(text);
 
         veganView = findViewById(R.id.vegan);
-        if (Boolean.parseBoolean(intent.getStringExtra("VEGAN"))) {
+        if (meal.getVegan()) {
             veganView.setText(getString(R.string.vegan));
         } else {
             veganView.setText(getString(R.string.not_vegan));
         }
 
         priceView = findViewById(R.id.price);
-        text = "Price: " + intent.getStringExtra("PRICE");
+        text = "Price: " + meal.getAvgPrice();
         priceView.setText(text);
 
         locationView = findViewById(R.id.location);
-        text = "Location: " + intent.getStringExtra("LOCATION");
+        text = "Location: " + meal.getLocation();
         locationView.setText(text);
     }
 
-    private void setButton() {
+    private void setButton(Intent intent) {
+        final Meal meal = (Meal) intent.getSerializableExtra("SERIALIZED_MEAL");
         attendButton = findViewById(R.id.attend_button);
         attendButton.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), PaymentActivity.class);
+                intent.putExtra("SERIALIZED_MEAL", meal);
                 startActivity(intent);
             }
         });

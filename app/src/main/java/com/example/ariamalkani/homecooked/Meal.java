@@ -1,6 +1,8 @@
 package com.example.ariamalkani.homecooked;
 
-public class Meal {
+import java.io.Serializable;
+
+public class Meal implements Serializable {
     private String chefName;
     private Boolean verified;
     private Boolean vegan;

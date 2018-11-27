@@ -122,13 +122,7 @@ public class BrowseFragment extends Fragment {
             holder.heldView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v){
                     Intent intent = new Intent(v.getContext(), ScheduleActivity.class);
-                    intent.putExtra("CHEF_NAME", meal.getChefName());
-                    intent.putExtra("VERIFIED", String.valueOf(meal.getVerified()));
-                    intent.putExtra("VEGAN", meal.getVegan());
-                    intent.putExtra("RATING", meal.getRating());
-                    intent.putExtra("PRICE", meal.getAvgPrice());
-                    intent.putExtra("THUMBNAIL", Integer.toString(meal.getThumbnail()));
-                    intent.putExtra("LOCATION", meal.getLocation());
+                    intent.putExtra("SERIALIZED_MEAL", meal);
                     startActivity(intent);
                 }
             });

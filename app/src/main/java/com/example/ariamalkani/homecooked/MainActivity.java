@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_host:
                     toolbar.setTitle("Host");
-                    fragment = new EmptyFragment();
+                    fragment = new HostFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_profile:

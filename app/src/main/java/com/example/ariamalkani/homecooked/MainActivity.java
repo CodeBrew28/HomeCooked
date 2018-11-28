@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_history:
                     toolbar.setTitle("History");
-                    fragment = new EmptyFragment();
+                    fragment = new HistoryFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_host:

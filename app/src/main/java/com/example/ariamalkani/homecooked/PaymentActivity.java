@@ -29,7 +29,7 @@ public class PaymentActivity extends AppCompatActivity {
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(v.getContext(), MainActivity.class);
+                        Intent intent = new Intent(v.getContext(), CentralActivity.class);
                         startActivity(intent);
                     }
                 });

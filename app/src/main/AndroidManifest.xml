@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".PaymentActivity" />
-        <activity android:name=".ReviewActivity"></activity>
+        <activity android:name=".ReviewActivity" />
+        <activity android:name=".HostMenu" />
+        <activity android:name=".HostFinal"></activity>
     </application>
 
 </manifest>

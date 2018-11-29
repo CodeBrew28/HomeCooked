@@ -14,6 +14,7 @@ import com.example.ariamalkani.homecooked.BrowseFragment;
 
 public class MainActivity extends AppCompatActivity {
     private ActionBar toolbar;
+    public static UserProfile selfUserProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = getSupportActionBar();
+        createSelfUserProfile();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -67,5 +69,12 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+
+    private void createSelfUserProfile(){
+        selfUserProfile = new UserProfile(1, "Bob", "Roberts", "lawbob@bob.com", "5144492360",
+                "1522 Clemment Blvd.", "Canton", StateClass.State.FLORIDA, 81845, false, false, true);
+
     }
 }

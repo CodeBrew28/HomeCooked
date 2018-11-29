@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Richard Nixon"
+            android:id="@+id/user_name"
             android:textSize="35dp"
             android:textStyle="bold"/>
         <LinearLayout
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:textSize = "18sp"
-                android:text="18001 Yorba Linda Blvd"/>
+                android:id="@+id/address"/>
         </LinearLayout>
 
         <LinearLayout
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:textSize = "18sp"
-                android:text="Yorba Linda"/>
+                android:id="@+id/city"/>
         </LinearLayout>
 
         <LinearLayout
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:textSize = "18sp"
-                android:text="California"/>
+                android:id="@+id/state"/>
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:textSize = "18sp"
-                android:text="(714) 993-5075"/>
+                android:id="@+id/phone"/>
         </LinearLayout>
 
         <LinearLayout
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:textSize = "18sp"
-                android:text="richard.nixon@arpa.net"/>
+                android:id="@+id/email"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,6 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:text="Vegan"
+                    android:id="@+id/vegan"
                     android:textSize = "18sp"
                     android:textOff="No"
                     android:textOn="Yes"/>
@@ -157,6 +158,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:text="Public Profile"
+                    android:id="@+id/public_profile"
                     android:textSize = "18sp"
                     android:textOff="No"
                     android:textOn="Yes"/>

@@ -22,7 +22,8 @@
             android:layout_height="50dp"
             android:id="@+id/attend_button"
             android:layout_gravity="bottom"
-            android:text="ATTEND"/>
+            android:text="ATTEND"
+            android:background="@color/colorSecondary"/>
 
         <TextView
             android:layout_width="match_parent"

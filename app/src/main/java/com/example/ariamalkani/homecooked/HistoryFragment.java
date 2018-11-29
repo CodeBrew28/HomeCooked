@@ -112,15 +112,15 @@ public class HistoryFragment extends Fragment {
         @Override
         public void onBindViewHolder(HistoryFragment.ReviewMealAdapter.MyViewHolder holder, final int position) {
             final ReviewMeal meal = mealList.get(position);
-            /*
+
             holder.heldView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v){
-                    Intent intent = new Intent(v.getContext(), ScheduleActivity.class);
-                    intent.putExtra("SERIALIZED_MEAL", meal);
+                    Intent intent = new Intent(v.getContext(), ReviewActivity.class);
+                    //intent.putExtra("SERIALIZED_MEAL", meal);
                     startActivity(intent);
                 }
             });
-            */
+
 
             holder.chefName.setText(meal.getChefName());
             if (meal.getVerified()) {

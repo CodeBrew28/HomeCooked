@@ -59,11 +59,11 @@ public class HistoryFragment extends Fragment {
     }
 
     public void addMeals(){
-        ReviewMeal m1 = new ReviewMeal("Shady Bob's BBQ", true, false,
+        ReviewMeal m1 = new ReviewMeal(1, "Shady Bob's BBQ", true, false,
                 "3.1/5", "Avg. $7", R.drawable.bbq, "201 N Goodwin Ave", 5,5,5);
-        ReviewMeal m2 = new ReviewMeal("John's Vegan Heaven", true, true,
+        ReviewMeal m2 = new ReviewMeal(2, "John's Vegan Heaven", true, true,
                 "4.7/5", "Avg. $20", R.drawable.vegan_steak, "603 E Daniel", 3 , 5, 4);
-        ReviewMeal m3 = new ReviewMeal("Burger Prince", false, false,
+        ReviewMeal m3 = new ReviewMeal(3, "Burger Prince", false, false,
                 "4.7/5", "Avg. $10", R.drawable.burger, "1401 W Green St", 1, 2, 3);
 
         reviewMealList.add(m3);

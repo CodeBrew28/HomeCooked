@@ -11,18 +11,18 @@ public class ReviewMeal extends Meal {
 
     public ReviewMeal(){}
 
-    public ReviewMeal(String chefName, Boolean verified, Boolean vegan,
+    public ReviewMeal(int mealID, String chefName, Boolean verified, Boolean vegan,
                       String rating, String avgPrice, int thumbnail, String location) {
-        super(chefName, verified, vegan, rating, avgPrice, thumbnail, location);
+        super(mealID, chefName, verified, vegan, rating, avgPrice, thumbnail, location);
         this.mealScore = 0;
         this.politeScore = 0;
         this.cleanScore = 0;
     }
 
-    public ReviewMeal(String chefName, Boolean verified, Boolean vegan,
+    public ReviewMeal(int mealID,String chefName, Boolean verified, Boolean vegan,
                       String rating, String avgPrice, int thumbnail, String location,
                       int mealScore, int cleanScore, int politeScore){
-        super(chefName, verified, vegan, rating, avgPrice, thumbnail, location);
+        super(mealID, chefName, verified, vegan, rating, avgPrice, thumbnail, location);
         this.mealScore = mealScore;
         this.cleanScore = cleanScore;
         this.politeScore = politeScore;

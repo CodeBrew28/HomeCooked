@@ -51,7 +51,7 @@ public class HistoryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history, container, false);
         history_text = view.findViewById(R.id.meal_history_header);
-        history_text.setText(selfUserProfile.getfName() + selfUserProfile.getlName() + "'s Meal History");
+        history_text.setText(selfUserProfile.getfName() + " " + selfUserProfile.getlName() + "'s Meal History");
         recyclerView = view.findViewById(R.id.history_recycler_view);
         reviewMealList = new ArrayList<>();
         addMeals();

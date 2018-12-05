@@ -4,13 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ariamalkani.homecooked.MainActivity">
+    tools:context="com.example.ariamalkani.homecooked.MainActivity"
+    android:background="@drawable/homecooked_login_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/homecooked_logo2"
+            android:layout_marginBottom="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:maxHeight="175dp"
+            android:maxWidth="175dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="src_over"
+            android:background="#88bababa"
+            android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -40,6 +59,7 @@
             android:id="@+id/login_button"
             android:layout_marginTop="20dp"
             android:background="@color/colorSecondary"/>
+        </LinearLayout>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

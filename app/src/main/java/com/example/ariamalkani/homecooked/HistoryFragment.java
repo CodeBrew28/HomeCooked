@@ -13,15 +13,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.ariamalkani.homecooked.MainActivity.selfUserProfile;
 
 
 public class HistoryFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<ReviewMeal> reviewMealList;
     private ReviewMealAdapter mAdapter;
+    private TextView history_text;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -46,6 +50,8 @@ public class HistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history, container, false);
+        history_text = view.findViewById(R.id.meal_history_header);
+        history_text.setText(selfUserProfile.getfName() + selfUserProfile.getlName() + "'s Meal History");
         recyclerView = view.findViewById(R.id.history_recycler_view);
         reviewMealList = new ArrayList<>();
         addMeals();

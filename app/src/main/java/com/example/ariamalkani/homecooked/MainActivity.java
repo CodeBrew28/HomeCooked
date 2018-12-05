@@ -45,22 +45,22 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean createSelfUserProfile(String username){
         if(username.equals("user1")) {
-            selfUserProfile = new UserProfile(1, "Bob", "Roberts", "lawbob@bob.com", "5144492360",
+            selfUserProfile = new UserProfile(1, R.drawable.nixon, "Bob", "Roberts", "lawbob@bob.com", "5144492360",
                     "1522 Clemment Blvd.", "Canton", StateClass.State.FLORIDA, 81845, false, false, true);
             return true;
         }
         if(username.equals("user2")) {
-            selfUserProfile = new UserProfile(2, "Ray", "Smith", "ross123@gmail.com", "5767523360",
+            selfUserProfile = new UserProfile(2, R.drawable.ire, "Ray", "Smith", "ross123@gmail.com", "5767523360",
                     "7892 Atlee Blvd.", "Leeland", StateClass.State.NORTH_CAROLINA, 83453, true, true,  false);
             return true;
         }
         if(username.equals("user3")) {
-            selfUserProfile = new UserProfile(3, "Dave", "Davis", "double@double.com", "8237983525",
+            selfUserProfile = new UserProfile(3, R.drawable.bush, "Dave", "Davis", "double@double.com", "8237983525",
                     "2056 Church Rd.", "Townsville", StateClass.State.OHIO, 45463, false, true, true);
             return true;
         }
         if(username.equals("user4")) {
-            selfUserProfile = new UserProfile(4, "Glade", "McKay", "glade.mckary@gmail.com", "4563771178",
+            selfUserProfile = new UserProfile(4, R.drawable.viet, "Glade", "McKay", "glade.mckary@gmail.com", "4563771178",
                     "45 Baker St.", "Missoula", StateClass.State.MISSOURI, 63112, false, true, true);
             return true;
         }

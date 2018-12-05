@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import static com.example.ariamalkani.homecooked.MainActivity.selfUserProfile;
 public class ProfileFragment extends Fragment {
     private Switch vegan;
     private Switch public_profile;
+    private ImageView profile_pic;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -36,6 +38,9 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        profile_pic = view.findViewById(R.id.profile_pic);
+        profile_pic.setImageResource(selfUserProfile.getThumbnail());
 
         TextView name = view.findViewById(R.id.user_name);
         name.setText(selfUserProfile.getfName() + " " + selfUserProfile.getlName());

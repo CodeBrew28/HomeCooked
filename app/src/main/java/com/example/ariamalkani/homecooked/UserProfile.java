@@ -6,6 +6,7 @@ package com.example.ariamalkani.homecooked;
 
 public class UserProfile {
     private int userID;
+    private int thumbnail;
     private String fName;
     private String lName;
     private String email;
@@ -22,9 +23,10 @@ public class UserProfile {
 
     }
 
-    public UserProfile(int userID, String fName, String lName, String email, String phone, String address, String city, StateClass.State state,
+    public UserProfile(int userID, int thumbnail, String fName, String lName, String email, String phone, String address, String city, StateClass.State state,
                        int zip, boolean isVegan, boolean isVerified, boolean isPublic){
         this.userID = userID;
+        this.thumbnail = thumbnail;
         this.fName=fName;
         this.lName=lName;
         this.email = email;
@@ -133,9 +135,11 @@ public class UserProfile {
         isPublic = aPublic;
     }
 
+    public int getThumbnail() {
+        return thumbnail;
+    }
 
-
-
-
-
+    public void setThumbnail(int thumbnail) {
+        this.thumbnail = thumbnail;
+    }
 }

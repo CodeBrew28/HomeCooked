@@ -3,6 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ariamalkani.homecooked.ProfileFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,100 +25,136 @@
             android:id="@+id/user_name"
             android:textSize="35dp"
             android:textStyle="bold"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/verificationButton"
+            android:layout_margin="10dp"
+            android:text="Get verified!"
+            android:padding="5dp"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorSecondary"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/addressLayout">
+            android:orientation="vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/addressLayout"
+            android:layout_marginBottom="10dp">
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
                 android:text="Address:"
-                android:textSize = "18sp"/>
+                android:textSize = "14sp"/>
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize = "18sp"
+                android:textSize = "20sp"
                 android:id="@+id/address"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/cityLayout">
+            android:orientation="vertical"
+            android:id="@+id/cityLayout"
+            android:layout_marginBottom="10dp">
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
                 android:text="City:"
-                android:textSize = "18sp"/>
+                android:textSize = "14sp"/>
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize = "18sp"
+                android:textSize = "20sp"
                 android:id="@+id/city"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/stateLayout">
+            android:orientation="vertical"
+            android:id="@+id/stateLayout"
+            android:layout_marginBottom="10dp">
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
                 android:text="State/Province:"
-                android:textSize = "18sp"/>
+                android:textSize = "14sp"/>
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize = "18sp"
+                android:textSize = "20sp"
                 android:id="@+id/state"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/phoneLayout">
+            android:orientation="vertical"
+            android:id="@+id/phoneLayout"
+            android:layout_marginBottom="10dp">
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
                 android:text="Phone:"
-                android:textSize = "18sp"/>
+                android:textSize = "14sp"/>
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize = "18sp"
+                android:textSize = "20sp"
                 android:id="@+id/phone"/>
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/emailLayout">
+            android:orientation="vertical"
+            android:id="@+id/emailLayout"
+            android:layout_marginBottom="10dp">
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
                 android:text="Email:"
-                android:textSize = "18sp"/>
+                android:textSize = "14sp"/>
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize = "18sp"
+                android:textSize = "20sp"
                 android:id="@+id/email"/>
         </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,8 +174,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:text="Vegan"
+                    android:textColor="@color/colorPrimary"
                     android:id="@+id/vegan"
-                    android:textSize = "18sp"
+                    android:textSize = "16sp"
                     android:textOff="No"
                     android:textOn="Yes"/>
                 <View
@@ -158,8 +198,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:text="Public Profile"
+                    android:textColor="@color/colorPrimary"
                     android:id="@+id/public_profile"
-                    android:textSize = "18sp"
+                    android:textSize = "16sp"
                     android:textOff="No"
                     android:textOn="Yes"/>
                 <View
@@ -168,26 +209,15 @@
                     android:layout_weight="1"/>
             </LinearLayout>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/verificationButton"
-                android:layout_margin="10dp"
-                android:text="Get verified!"
-                android:padding="5dp"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                android:background="@color/colorSecondary"/>
+
         </LinearLayout>
 
 
     </LinearLayout>
 
+    </ScrollView>
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></RelativeLayout>
 
 
 

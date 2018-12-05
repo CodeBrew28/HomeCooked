@@ -1,80 +1,71 @@
-// Cite: Bottom navigation and recycler view learned from here https://www.androidhive.info/2017/12/android-working-with-bottom-navigation/
-
 package com.example.ariamalkani.homecooked;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
-import com.example.ariamalkani.homecooked.BrowseFragment;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    private ActionBar toolbar;
+    private EditText username;
+    private Button login;
     public static UserProfile selfUserProfile;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_login);
 
-        toolbar = getSupportActionBar();
-        createSelfUserProfile();
+        login = findViewById(R.id.login_button);
+        username = findViewById(R.id.login_username);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(final View v) {
+                if(createSelfUserProfile(username.getText().toString())) {
+                    Intent intent = new Intent(v.getContext(), CentralActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                    builder.setMessage("Login unsuccessful");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-        toolbar.setTitle("Browse");
-        loadFragment(new BrowseFragment());
-    }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-                case R.id.navigation_browse:
-                    toolbar.setTitle("Browse");
-                    fragment = new BrowseFragment();
-                    loadFragment(fragment);
-                    return true;
-                case R.id.navigation_history:
-                    toolbar.setTitle("History");
-                    fragment = new HistoryFragment();
-                    loadFragment(fragment);
-                    return true;
-                case R.id.navigation_host:
-                    toolbar.setTitle("Host");
-                    fragment = new HostFragment();
-                    loadFragment(fragment);
-                    return true;
-                case R.id.navigation_profile:
-                    toolbar.setTitle("Profile");
-                    fragment = new ProfileFragment();
-                    loadFragment(fragment);
-                    return true;
+                        }
+                    });
+                    builder.show();
+                }
             }
-            return false;
-        }
-    };
-
-    void loadFragment(Fragment fragment) {
-        // load fragment
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
+        });
     }
 
 
-    private void createSelfUserProfile(){
-        selfUserProfile = new UserProfile(1, "Bob", "Roberts", "lawbob@bob.com", "5144492360",
-                "1522 Clemment Blvd.", "Canton", StateClass.State.FLORIDA, 81845, false, false, true);
+    private boolean createSelfUserProfile(String username){
+        if(username.equals("user1")) {
+            selfUserProfile = new UserProfile(1, "Bob", "Roberts", "lawbob@bob.com", "5144492360",
+                    "1522 Clemment Blvd.", "Canton", StateClass.State.FLORIDA, 81845, false, false, true);
+            return true;
+        }
+        if(username.equals("user2")) {
+            selfUserProfile = new UserProfile(2, "Ray", "Smith", "ross123@gmail.com", "5767523360",
+                    "7892 Atlee Blvd.", "Leeland", StateClass.State.NORTH_CAROLINA, 83453, true, true,  false);
+            return true;
+        }
+        if(username.equals("user3")) {
+            selfUserProfile = new UserProfile(3, "Dave", "Davis", "double@double.com", "8237983525",
+                    "2056 Church Rd.", "Townsville", StateClass.State.OHIO, 45463, false, true, true);
+            return true;
+        }
+        if(username.equals("user4")) {
+            selfUserProfile = new UserProfile(4, "Glade", "McKay", "glade.mckary@gmail.com", "4563771178",
+                    "45 Baker St.", "Missoula", StateClass.State.MISSOURI, 63112, false, true, true);
+            return true;
+        }
+
+        return false;
 
     }
 }

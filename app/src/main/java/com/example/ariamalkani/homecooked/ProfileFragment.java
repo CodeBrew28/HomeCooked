@@ -3,9 +3,6 @@ package com.example.ariamalkani.homecooked;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
@@ -86,6 +83,7 @@ public class ProfileFragment extends Fragment {
         });
 
         final Button veri = view.findViewById(R.id.verificationButton);
+        checkVeriButtonStatus(veri);
 
         veri.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(final View v) {

@@ -11,6 +11,7 @@ import android.widget.Button;
 public class ReviewActivity extends AppCompatActivity {
     Button submitButton;
     Button reportButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class ReviewActivity extends AppCompatActivity {
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(v.getContext(), MainActivity.class);
+                        Intent intent = new Intent(v.getContext(), CentralActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -32,4 +33,6 @@ public class ReviewActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

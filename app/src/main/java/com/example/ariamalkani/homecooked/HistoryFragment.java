@@ -13,15 +13,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.ariamalkani.homecooked.MainActivity.selfUserProfile;
 
 
 public class HistoryFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<ReviewMeal> reviewMealList;
     private ReviewMealAdapter mAdapter;
+    private TextView history_text;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -46,6 +50,8 @@ public class HistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history, container, false);
+        history_text = view.findViewById(R.id.meal_history_header);
+        history_text.setText(selfUserProfile.getfName() + " " + selfUserProfile.getlName() + "'s Meal History");
         recyclerView = view.findViewById(R.id.history_recycler_view);
         reviewMealList = new ArrayList<>();
         addMeals();
@@ -59,11 +65,11 @@ public class HistoryFragment extends Fragment {
     }
 
     public void addMeals(){
-        ReviewMeal m1 = new ReviewMeal("Shady Bob's BBQ", true, false,
+        ReviewMeal m1 = new ReviewMeal(1, "Shady Bob's BBQ", true, false,
                 "3.1/5", "Avg. $7", R.drawable.bbq, "201 N Goodwin Ave", 5,5,5);
-        ReviewMeal m2 = new ReviewMeal("John's Vegan Heaven", true, true,
+        ReviewMeal m2 = new ReviewMeal(2, "John's Vegan Heaven", true, true,
                 "4.7/5", "Avg. $20", R.drawable.vegan_steak, "603 E Daniel", 3 , 5, 4);
-        ReviewMeal m3 = new ReviewMeal("Burger Prince", false, false,
+        ReviewMeal m3 = new ReviewMeal(3, "Burger Prince", false, false,
                 "4.7/5", "Avg. $10", R.drawable.burger, "1401 W Green St", 1, 2, 3);
 
         reviewMealList.add(m3);

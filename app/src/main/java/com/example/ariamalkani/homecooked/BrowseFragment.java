@@ -69,11 +69,11 @@ public class BrowseFragment extends Fragment {
     }
 
     private void addMeals() {
-        Meal m1 = new Meal("Shady Bob's BBQ", true, false,
+        Meal m1 = new Meal(1,"Shady Bob's BBQ", true, false,
                 "3.1/5", "Avg. $7", R.drawable.bbq, "201 N Goodwin Ave");
-        Meal m2 = new Meal("John's Vegan Heaven", true, true,
+        Meal m2 = new Meal(2,"John's Vegan Heaven", true, true,
                 "4.7/5", "Avg. $20", R.drawable.vegan_steak, "603 E Daniel");
-        Meal m3 = new Meal("Burger Prince", false, false,
+        Meal m3 = new Meal(3,"Burger Prince", false, false,
                 "4.7/5", "Avg. $10", R.drawable.burger, "1401 W Green St");
 
         mealList.add(m1);

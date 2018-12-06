@@ -47,7 +47,7 @@ public class ScheduleActivity extends AppCompatActivity {
         }
 
         ratingView = findViewById(R.id.rating);
-        text = meal.getRating();
+        text = Double.toString(meal.getRating()) + " / 5";
         ratingView.setText(text);
 
         veganView = findViewById(R.id.vegan);

@@ -1,11 +1,14 @@
 package com.example.ariamalkani.homecooked;
 
+import java.util.ArrayList;
+
 /**
  * Created by laked on 11/28/2018.
  */
 
 public class UserProfile {
     private int userID;
+    private int thumbnail;
     private String fName;
     private String lName;
     private String email;
@@ -17,14 +20,17 @@ public class UserProfile {
     private boolean isVegan;
     private boolean isVerified;
     private boolean isPublic;
+    private ArrayList<ReviewClass> reviewsByUser;
+    private ArrayList<ReviewClass> reviewsByOthers;
 
     public UserProfile(){
 
     }
 
-    public UserProfile(int userID, String fName, String lName, String email, String phone, String address, String city, StateClass.State state,
+    public UserProfile(int userID, int thumbnail, String fName, String lName, String email, String phone, String address, String city, StateClass.State state,
                        int zip, boolean isVegan, boolean isVerified, boolean isPublic){
         this.userID = userID;
+        this.thumbnail = thumbnail;
         this.fName=fName;
         this.lName=lName;
         this.email = email;
@@ -36,6 +42,8 @@ public class UserProfile {
         this.isVegan = isVegan;
         this.isVerified = isVerified;
         this.isPublic = isPublic;
+        reviewsByOthers = new ArrayList<ReviewClass>(5);
+        reviewsByUser = new ArrayList<ReviewClass>(5);
     }
     public int getUserID() {
         return userID;
@@ -133,9 +141,51 @@ public class UserProfile {
         isPublic = aPublic;
     }
 
+    public int getThumbnail() {
+        return thumbnail;
+    }
 
+    public void setThumbnail(int thumbnail) {
+        this.thumbnail = thumbnail;
+    }
 
+    public ArrayList<ReviewClass> getReviewsByUser() {
+        return reviewsByUser;
+    }
 
+    public void setReviewsByUser(ArrayList<ReviewClass> reviewsByUser) {
+        this.reviewsByUser = reviewsByUser;
+    }
 
+    public ArrayList<ReviewClass> getReviewsByOthers() {
+        return reviewsByOthers;
+    }
 
+    public void setReviewsByOthers(ArrayList<ReviewClass> reviewsByOthers) {
+        this.reviewsByOthers = reviewsByOthers;
+    }
+
+    public int getAverageMeal(){
+        int average = 0;
+        for(int i = 0; i < reviewsByOthers.size(); i++){
+            average+=reviewsByOthers.get(i).getMealScore();
+        }
+        return average;
+    }
+
+    public int getAverageClean(){
+        int average = 0;
+        for(int i = 0; i < reviewsByOthers.size(); i++){
+            average+=reviewsByOthers.get(i).getCleanScore();
+        }
+        return average;
+    }
+
+    public int getAveragePolite(){
+        int average = 0;
+        for(int i = 0; i < reviewsByOthers.size(); i++){
+            average+=reviewsByOthers.get(i).getPoliteScore();
+        }
+        return average;
+    }
 }

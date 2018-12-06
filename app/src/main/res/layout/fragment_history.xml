@@ -15,9 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:id="@+id/meal_history_header"
             android:text="Meal History"
+            android:textStyle="bold"
             android:textColor="#111"
-            android:textSize="16dp" />
+            android:textSize="26dp"
+            android:layout_margin="10dp"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/history_recycler_view"

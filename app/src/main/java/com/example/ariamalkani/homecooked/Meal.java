@@ -2,14 +2,13 @@ package com.example.ariamalkani.homecooked;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Meal implements Serializable {
     private int mealID;
     private String chefName;
     private Boolean verified;
     private Boolean vegan;
-    private String rating;
+    private double rating;
     private String avgPrice;
     private String location;
     private int thumbnail;
@@ -18,7 +17,7 @@ public class Meal implements Serializable {
     public Meal() { }
 
     public Meal(int mealID, String chefName, Boolean verified, Boolean vegan,
-                String rating, String avgPrice, int thumbnail, String location) {
+                double rating, String avgPrice, int thumbnail, String location) {
         this.mealID = mealID;
         this.chefName = chefName;
         this.verified = verified;
@@ -43,7 +42,7 @@ public class Meal implements Serializable {
         return vegan;
     }
 
-    public String getRating() {
+    public double getRating() {
         return rating;
     }
 
@@ -71,7 +70,7 @@ public class Meal implements Serializable {
         this.vegan = vegan;
     }
 
-    public void setRating(String rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -66,11 +67,11 @@ public class HistoryFragment extends Fragment {
 
     public void addMeals(){
         ReviewMeal m1 = new ReviewMeal(1, "Shady Bob's BBQ", true, false,
-                "3.1/5", "Avg. $7", R.drawable.bbq, "201 N Goodwin Ave", 5,5,5);
+                3.1, "Avg. $7", R.drawable.bbq, "201 N Goodwin Ave", 5,5,5);
         ReviewMeal m2 = new ReviewMeal(2, "John's Vegan Heaven", true, true,
-                "4.7/5", "Avg. $20", R.drawable.vegan_steak, "603 E Daniel", 3 , 5, 4);
+                4.7, "Avg. $20", R.drawable.vegan_steak, "603 E Daniel", 3 , 5, 4);
         ReviewMeal m3 = new ReviewMeal(3, "Burger Prince", false, false,
-                "4.7/5", "Avg. $10", R.drawable.burger, "1401 W Green St", 1, 2, 3);
+                4.7, "Avg. $10", R.drawable.burger, "1401 W Green St", 1, 2, 3);
 
         reviewMealList.add(m3);
         reviewMealList.add(m1);
@@ -84,6 +85,7 @@ public class HistoryFragment extends Fragment {
             public TextView chefName, avgPrice, rating, vegan, verified, mealScore, politeScore, cleanScore;
             public ImageView thumbnail;
             public View heldView;
+            public RatingBar starBar;
 
             public MyViewHolder(View view) {
                 super(view);
@@ -98,7 +100,7 @@ public class HistoryFragment extends Fragment {
                 mealScore = view.findViewById(R.id.meal_score);
                 politeScore = view.findViewById(R.id.polite_score);
                 cleanScore = view.findViewById(R.id.clean_score);
-
+                starBar = view.findViewById(R.id.review_overall_rating);
             }
         }
 
@@ -139,13 +141,14 @@ public class HistoryFragment extends Fragment {
                 holder.vegan.setText("Vegan");
             }
             holder.avgPrice.setText(meal.getAvgPrice());
-            holder.rating.setText(meal.getRating());
+            holder.rating.setText(meal.getRating()+"/5");
             holder.thumbnail.setImageResource(meal.getThumbnail());
 
 
-            holder.mealScore.setText("Meal Rating "+ Integer.toString(meal.getMealScore()));
-            holder.politeScore.setText("Politeness Rating " + Integer.toString(meal.getPoliteScore()));
-            holder.cleanScore.setText("Cleanliness Rating " + Integer.toString(meal.getCleanScore()));
+            holder.mealScore.setText(Integer.toString(meal.getMealScore()));
+            holder.politeScore.setText(Integer.toString(meal.getPoliteScore()));
+            holder.cleanScore.setText(Integer.toString(meal.getCleanScore()));
+            holder.starBar.setRating(new Float(meal.getRating()));
         }
 
         @Override

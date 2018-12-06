@@ -16,13 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CentralActivity"/>
+        <activity android:name=".CentralActivity" />
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".ReviewActivity" />
         <activity android:name=".HostMenu" />
         <activity android:name=".HostFinal" />
-
     </application>
 
 </manifest>

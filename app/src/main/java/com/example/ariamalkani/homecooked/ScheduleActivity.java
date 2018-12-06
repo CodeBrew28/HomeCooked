@@ -36,7 +36,7 @@ public class ScheduleActivity extends AppCompatActivity {
         thumbnail.setImageResource(meal.getThumbnail());
 
         chefNameView = findViewById(R.id.chef_name);
-        String text = "Chef: " + meal.getChefName();
+        String text = meal.getChefName();
         chefNameView.setText(text);
 
         verifiedView = findViewById(R.id.verified_bool);
@@ -47,7 +47,7 @@ public class ScheduleActivity extends AppCompatActivity {
         }
 
         ratingView = findViewById(R.id.rating);
-        text = "Rating: " + meal.getRating();
+        text = meal.getRating();
         ratingView.setText(text);
 
         veganView = findViewById(R.id.vegan);
@@ -58,11 +58,11 @@ public class ScheduleActivity extends AppCompatActivity {
         }
 
         priceView = findViewById(R.id.price);
-        text = "Price: " + meal.getAvgPrice();
+        text = meal.getAvgPrice();
         priceView.setText(text);
 
         locationView = findViewById(R.id.location);
-        text = "Location: " + meal.getLocation();
+        text = meal.getLocation();
         locationView.setText(text);
     }
 

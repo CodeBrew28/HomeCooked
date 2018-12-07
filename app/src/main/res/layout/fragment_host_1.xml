@@ -56,6 +56,7 @@
             android:background="@color/colorSecondary"/>
 
     <TimePicker
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"></TimePicker>
@@ -75,6 +76,7 @@
 
         <TimePicker
             android:id="@+id/timePicker"
+            android:color="@color/colorSecondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"></TimePicker>
@@ -83,13 +85,14 @@
 
 
         <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Continue to meal"
-        android:id="@+id/continueButton"
-        android:background="@color/colorSecondary"
-        android:layout_marginBottom="100dp"/>
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Continue to meal"
+            android:id="@+id/continueButton"
+            android:background="@color/colorSecondary"
+            android:layout_marginBottom="100dp"/>
     </LinearLayout>
     </ScrollView>
 </FrameLayout>

@@ -16,13 +16,24 @@
         android:orientation="vertical"
         android:layout_margin="10dp">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
+    <!--<TextView-->
+        <!--android:id="@+id/textView9"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="25sp"-->
 
-        android:text="Please select a time and date to host." />
+        <!--android:text="Pick a date to host." />-->
+
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/eventname"
+            android:text="Pick a date to host"
+            android:background="@color/colorSecondary"/>
 
     <CalendarView
         android:layout_width="wrap_content"
@@ -31,6 +42,19 @@
 
     </CalendarView>
 
+
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/eventname3"
+            android:text="Pick a start time"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorSecondary"/>
+
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +62,27 @@
 
 
 
-    <Button
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/eventname2"
+            android:text="Pick a end time"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorSecondary"/>
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"></TimePicker>
+
+
+
+
+        <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

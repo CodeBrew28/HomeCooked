@@ -8,82 +8,119 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Event Name:"
-                android:textSize = "18sp"/>
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/eventname"
+                android:text="Event Name"
+                android:background="@color/colorSecondary"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textSize = "18sp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="4dp"
+                    android:hint="Bob's Barbecue Bash"/>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/cmenu"
+                android:text="Menu"
+                android:background="@color/colorSecondary"/>
+
             <EditText
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:textSize = "18sp"
-                android:hint="Brother Bob's Big Barbecue Bash"/>
-        </LinearLayout>
+                android:layout_margin="5dp"
+                android:hint="Broiled Beef Burgers\nBaked Beans\nBob's Brilliant Banana Bread"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Menu"
-            android:layout_marginTop="20dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:hint="Broiled Beef Burgers\nBaked Beans\nBob's Brilliant Banana Bread"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Allergenics"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint = "Peanuts, soy, bananas, gluten"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
-            <Switch
-                android:layout_width="0dp"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/allergies"
+                android:text="Allergies or Dietary Preferences"
+                android:background="@color/colorSecondary"/>
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Vegan"
-                android:layout_margin="10dp"
-                android:textSize = "18sp"
-                android:textOff="No"
-                android:textOn="Yes"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:hint = "Peanuts, soy, bananas, gluten"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+                <Switch
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Vegan"
+                    android:layout_margin="10dp"
+                    android:textSize = "18sp"
+                    android:textOff="No"
+                    android:textOn="Yes"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+                <Switch
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Vegetarian"
+                    android:layout_margin="10dp"
+                    android:textSize = "18sp"
+                    android:textOff="No"
+                    android:textOn="Yes"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/continue2"
+                android:text="Continue"
+                android:background="@color/colorSecondary"/>
         </LinearLayout>
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:id="@+id/continue2"
-            android:text="Continue"
-            android:background="@color/colorSecondary"/>
-    </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

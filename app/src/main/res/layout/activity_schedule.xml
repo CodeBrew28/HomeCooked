@@ -15,8 +15,7 @@
             android:id="@+id/thumbnail"
             android:layout_weight="0"
             android:layout_gravity="fill_vertical"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_margin="10dp"
             android:contentDescription="@string/thumbnail_description" />
 
         <Button
@@ -25,10 +24,7 @@
             android:id="@+id/attend_button"
             android:layout_gravity="bottom"
             android:text="ATTEND"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="10dp"
+            android:layout_margin="10dp"
             android:background="@color/colorSecondary"/>
 
         <LinearLayout
@@ -36,8 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -52,7 +48,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chef: " />
+                    android:text="Chef: "
+                    android:textColor="@color/colorPrimary"
+                    />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -74,7 +72,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verified: " />
+                    android:text="Verified: "
+                    android:textColor="@color/colorPrimary"
+                    />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -96,7 +96,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rating: " />
+                    android:text="Rating: "
+                    android:textColor="@color/colorPrimary"
+                    />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -119,7 +121,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vegan: " />
+                    android:text="Vegan: "
+                    android:textColor="@color/colorPrimary"
+                    />
 
 
                 <TextView
@@ -143,7 +147,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Price: " />
+                    android:text="Price: "
+                    android:textColor="@color/colorPrimary"
+                    />
 
 
                 <TextView
@@ -166,14 +172,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location: " />
+                    android:text="Location: "
+                    android:textColor="@color/colorPrimary"
+                    />
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/location"
-                    android:gravity="right"/>
+                    android:gravity="right"
+                    />
 
             </LinearLayout>
 

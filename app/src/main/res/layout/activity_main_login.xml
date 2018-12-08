@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ariamalkani.homecooked.MainActivity"
-    android:background="@drawable/homecooked_login_bg">
-
+    >
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

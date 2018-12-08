@@ -17,9 +17,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Review your meal"
+            android:text="Review Your Meal"
             android:gravity="center_horizontal"
             android:textSize="35sp"
+            android:textStyle="bold"
             android:visibility="visible"
             android:layout_marginBottom="20dp"/>
 
@@ -31,7 +32,8 @@
             android:gravity="center_horizontal"
             android:textSize="16sp"
             android:visibility="visible"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorPrimary"/>
         <RatingBar
             android:id="@+id/mealRating"
             android:layout_width="wrap_content"
@@ -49,7 +51,8 @@
             android:gravity="center_horizontal"
             android:textSize="16sp"
             android:visibility="visible"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorPrimary"/>
         <RatingBar
             android:id="@+id/cleanRating"
             android:layout_width="wrap_content"
@@ -67,7 +70,8 @@
             android:gravity="center_horizontal"
             android:textSize="16sp"
             android:visibility="visible"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorPrimary"/>
         <RatingBar
             android:id="@+id/politeRating"
             android:layout_width="wrap_content"

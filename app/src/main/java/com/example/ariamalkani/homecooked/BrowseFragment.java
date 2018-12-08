@@ -73,7 +73,7 @@ public class BrowseFragment extends Fragment {
         Meal m1 = new Meal(1,"Shady Bob's BBQ", true, false,
                 3.1, "Avg. $7", R.drawable.bbq, "201 N Goodwin Ave");
         Meal m2 = new Meal(2,"John's Vegan Heaven", true, true,
-                2.2, "Avg. $20", R.drawable.vegan_steak, "603 E Daniel");
+                2.2 , "Avg. $20", R.drawable.vegan_steak, "603 E Daniel");
         Meal m3 = new Meal(3,"Burger Prince", false, false,
                 4.7, "Avg. $10", R.drawable.burger, "1401 W Green St");
 

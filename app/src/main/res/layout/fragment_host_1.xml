@@ -59,6 +59,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
         android:layout_gravity="center"></TimePicker>
 
 
@@ -70,12 +71,13 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:id="@+id/eventname2"
-            android:text="Pick a end time"
+            android:text="Pick an end time"
             android:layout_marginBottom="20dp"
             android:background="@color/colorSecondary"/>
 
         <TimePicker
             android:id="@+id/timePicker"
+            android:timePickerMode="spinner"
             android:color="@color/colorSecondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

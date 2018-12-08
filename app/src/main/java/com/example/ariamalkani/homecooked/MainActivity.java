@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
+        getWindow().setBackgroundDrawableResource(R.drawable.homecooked_login_bg);
+
         login = findViewById(R.id.login_button);
         username = findViewById(R.id.login_username);
 
